@@ -32,7 +32,7 @@ public class ReaderQuestions {
     }
 
     public String getAnswer() {
-        return answer;
+        return this.answer;
     }
 
     public void setAnswer(String answer) {

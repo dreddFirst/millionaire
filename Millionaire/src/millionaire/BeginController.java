@@ -26,6 +26,7 @@ import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import auxiliaryClasses.Random;
 import auxiliaryClasses.ReaderAnswers;
+import javafx.scene.control.Alert;
 import javafx.scene.layout.Background;
 
 /**
@@ -70,14 +71,15 @@ public class BeginController implements Initializable {
     private MenuItem nameUs;
     
     private static int win = 0;
-    private String answerOriginal;
+    private static int count = 1;
+    private static String answerOriginal;
     
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        readQA(1);
+        readQA(count);
     }  
     
     @FXML
@@ -86,9 +88,14 @@ public class BeginController implements Initializable {
     }
     
     @FXML
-    public void onClickInterName() throws IOException{
-     Stage user = new Stage();
-     openUser(user);
+    public void onClickInterName(){
+        try{
+            Stage user = new Stage();
+            openUser(user);
+        }
+        catch(Exception e){
+            
+        }
     }
     
     public void setLabelName(String name){
@@ -97,11 +104,11 @@ public class BeginController implements Initializable {
     
  
     private void openUser(Stage user) throws IOException{
-        
+        win = 0;
         Parent root = FXMLLoader.load(getClass().getResource("User.fxml"));
         Scene scene = new Scene(root);
         user.setScene(scene);
-        user.setTitle("Ввод имени");
+        user.setTitle("Новая игра");
         user.show();
             
         closeBegin();
@@ -119,10 +126,11 @@ public class BeginController implements Initializable {
             ReaderQuestions rq = new ReaderQuestions();
             ReaderAnswers ra = new ReaderAnswers();
             
-            answerOriginal = rq.getAnswer();
+            
             int numberQuestion = Random.random();
             rq.setNumberStage(i);
             rq.readQuestion(numberQuestion);
+            answerOriginal = rq.getAnswer();
             question.setText(rq.getQuestion());
         
                
@@ -132,43 +140,73 @@ public class BeginController implements Initializable {
             answer2.setText(ReaderAnswers.getAnswer2());
             answer3.setText(ReaderAnswers.getAnswer3());
             answer4.setText(ReaderAnswers.getAnswer4());
-            
-            if(corectAnswer1().equals(answerOriginal)){
-                answer1.setText(answer1.getText()+666);
-            }
-//            else if(corectAnswer2().equals(answerOriginal)){
-//                win += 100;
-//                System.out.println(win);
-//            }else if(corectAnswer3().equals(answerOriginal)){
-//                win += 100;
-//                System.out.println(win);
-//            }else if(corectAnswer4().equals(answerOriginal)){
-//                win += 100;
-//                System.out.println(win);
-//            }
-            
-            
+    }
+    
+    private void getAlert(){
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Внимание!!!");
+            alert.setHeaderText(null);
+            alert.setContentText("Ваш выигрыш равен "+win+" леям");
+            alert.showAndWait();
+    }
+    
+    @FXML
+    public void corectAnswer1(){
+        
+        if(answer1.getText().equals(answerOriginal)){
+            win += 100;
+            System.out.println(answer1.getText()+" "+ answerOriginal);
+            getAlert();
+            count++;
+            readQA(count);
+        }
+        else{
+            onClickInterName();
+        }
         
     }
     
     @FXML
-    public String corectAnswer1(){
-        return answer1.getText();
+    public void corectAnswer2(){
+        
+        if(answer2.getText().equals(answerOriginal)){
+            win += 100;
+            System.out.println(answer1.getText()+" "+ answerOriginal);
+            getAlert();
+            count++;
+            readQA(count);
+        }
+        else{
+            onClickInterName();
+        }
     }
     
     @FXML
-    public String corectAnswer2(){
-        return answer2.getText();
+    public void corectAnswer3(){
+        if(answer3.getText().equals(answerOriginal)){
+            win += 100;
+            System.out.println(answer1.getText()+" "+ answerOriginal);
+            getAlert();
+            count++;
+            readQA(count);
+        }
+        else{
+            onClickInterName();
+        }
     }
     
     @FXML
-    public String corectAnswer3(){
-        return answer3.getText();
-    }
-    
-    @FXML
-    public String corectAnswer4(){
-        return answer4.getText();
+    public void corectAnswer4(){
+        if(answer4.getText().equals(answerOriginal)){
+            win += 100;
+            System.out.println(answer1.getText()+" "+ answerOriginal);
+            getAlert();
+            count++;
+            readQA(count);
+        }
+        else{
+            onClickInterName();
+        }
     }
         
 }

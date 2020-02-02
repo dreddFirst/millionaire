@@ -43,9 +43,9 @@
                 <Font name="Serif Bold" size="16.0" fx:id="x1" />
               </font>
             </Button>
-            <Button fx:id="answer2b" font="$x1" layoutX="436.0" layoutY="484.0" mnemonicParsing="false" opacity="0.0" prefHeight="40.0" prefWidth="324.0" text="" textFill="YELLOW" />
-            <Button fx:id="answer4b" layoutX="437.0" layoutY="546.0" mnemonicParsing="false" opacity="0.0" prefHeight="40.0" prefWidth="324.0" text="" />
-            <Button fx:id="answer3b" layoutX="38.0" layoutY="546.0" mnemonicParsing="false" opacity="0.0" prefHeight="40.0" prefWidth="324.0" text="" />
+            <Button fx:id="answer2b" onAction="#corectAnswer2" font="$x1" layoutX="436.0" layoutY="484.0" mnemonicParsing="false" opacity="0.0" prefHeight="40.0" prefWidth="324.0" text="" textFill="YELLOW" />
+            <Button fx:id="answer4b" onAction="#corectAnswer3" layoutX="437.0" layoutY="546.0" mnemonicParsing="false" opacity="0.0" prefHeight="40.0" prefWidth="324.0" text="" />
+            <Button fx:id="answer3b" onAction="#corectAnswer4" layoutX="38.0" layoutY="546.0" mnemonicParsing="false" opacity="0.0" prefHeight="40.0" prefWidth="324.0" text="" />
           </children>
         </AnchorPane>
       </center>
