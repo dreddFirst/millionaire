@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="root" prefHeight="600.0" prefWidth="800.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="millionaire.BeginController">
+  <children>
+    <BorderPane layoutX="0.0" layoutY="0.0" prefHeight="600.0" prefWidth="800.0">
+      <center>
+        <AnchorPane prefHeight="200.0" prefWidth="200.0">
+          <children>
+            <ImageView disable="false" fitHeight="600.0" fitWidth="800.0" layoutX="0.0" layoutY="0.0" pickOnBounds="true" preserveRatio="true" visible="true">
+              <image>
+                <Image url="@../images/slide-2.jpg" />
+              </image>
+            </ImageView>
+            <Button fx:id="helpPhone" disable="false" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" opacity="0.0" prefHeight="87.0" prefWidth="140.0" text="" visible="true" />
+            <Button fx:id="helpFF" layoutX="14.0" layoutY="118.0" mnemonicParsing="false" opacity="0.0" prefHeight="87.0" prefWidth="140.0" text="" />
+            <Button fx:id="helpHall" layoutX="14.0" layoutY="228.0" mnemonicParsing="false" opacity="0.0" prefHeight="87.0" prefWidth="140.0" text="" />
+            <Label fx:id="question" layoutX="65.0" layoutY="358.0" prefHeight="87.0" prefWidth="665.0" text="" textAlignment="LEFT" textFill="YELLOW" wrapText="true" />
+            <Label fx:id="answer1" layoutX="38.0" layoutY="484.0" prefHeight="40.0" prefWidth="324.0" text="" textAlignment="CENTER" textFill="YELLOW" />
+            <Label id="answer2" fx:id="answer3" layoutX="38.0" layoutY="546.0" prefHeight="40.0" prefWidth="324.0" text="" textAlignment="CENTER" textFill="YELLOW" />
+            <Label id="answer3" fx:id="answer2" layoutX="437.0" layoutY="483.0" prefHeight="40.0" prefWidth="324.0" text="" textAlignment="CENTER" textFill="YELLOW" />
+            <Label fx:id="answer4" layoutX="437.0" layoutY="546.0" prefHeight="40.0" prefWidth="324.0" text="" textAlignment="CENTER" textFill="YELLOW" />
+            <Label layoutX="157.0" layoutY="13.0" prefHeight="24.0" prefWidth="140.0" text="Имя игрока:" textFill="YELLOW">
+              <font>
+                <Font size="20.0" />
+              </font>
+            </Label>
+            <Label fx:id="namePlayer" alignment="CENTER" contentDisplay="LEFT" layoutX="304.0" layoutY="14.0" minHeight="24.0" prefHeight="24.0" prefWidth="165.0" text="" textAlignment="CENTER" textFill="YELLOW" textOverrun="ELLIPSIS" wrapText="false">
+              <font>
+                <Font name="Serif Bold" size="20.0" fx:id="x2" />
+              </font>
+            </Label>
+            <Button fx:id="answer1b" onAction="#corectAnswer1"  alignment="CENTER_LEFT" layoutX="38.0" layoutY="483.0" mnemonicParsing="false" opacity="0.0" prefHeight="40.0" prefWidth="324.0" text="" textFill="YELLOW">
+              <font>
+                <Font name="Serif Bold" size="16.0" fx:id="x1" />
+              </font>
+            </Button>
+            <Button fx:id="answer2b" font="$x1" layoutX="436.0" layoutY="484.0" mnemonicParsing="false" opacity="0.0" prefHeight="40.0" prefWidth="324.0" text="" textFill="YELLOW" />
+            <Button fx:id="answer4b" layoutX="437.0" layoutY="546.0" mnemonicParsing="false" opacity="0.0" prefHeight="40.0" prefWidth="324.0" text="" />
+            <Button fx:id="answer3b" layoutX="38.0" layoutY="546.0" mnemonicParsing="false" opacity="0.0" prefHeight="40.0" prefWidth="324.0" text="" />
+          </children>
+        </AnchorPane>
+      </center>
+      <top>
+        <MenuBar fx:id="menuBar">
+          <menus>
+            <Menu mnemonicParsing="false" text="Файл">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#onClickInterName" text="Новая игра" fx:id="nameUS" />
+                <MenuItem mnemonicParsing="false" onAction="#onClickExit" text="Закрыть" />
+              </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Help">
+              <items>
+                <MenuItem mnemonicParsing="false" text="About" />
+              </items>
+            </Menu>
+          </menus>
+        </MenuBar>
+      </top>
+    </BorderPane>
+  </children>
+  <stylesheets>
+    <URL value="@begin.css" />
+  </stylesheets>
+</AnchorPane>
